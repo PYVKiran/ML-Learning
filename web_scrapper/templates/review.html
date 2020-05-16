@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>
+        RVW-Scrapper
+    </title>
+</head>
+<body>
+<div>
+    <h1>
+        Product Reviews
+    </h1>
+</div>
+<div>
+    <table>
+        <caption>
+            <h2>
+                <b>
+                    {{ search_string }}
+                </b>
+            </h2>
+        </caption>
+        <thead>
+        {%- for column in rvw_cols %}
+            <th>{{ column }}</th>
+        {%- endfor %}
+        </thead>
+        <tbody>
+        {%- for row in rvw_rows %}
+        <tr>
+            {%- for key,value in row.items() %}
+            <!--<th>{{ key }}</th> -->
+                <td>{{ value }}</td>
+                {%- endfor %}
+        </tr>
+        {%- endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
